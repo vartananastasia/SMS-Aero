@@ -61,10 +61,8 @@ class Client
             case self::TYPE_7:
                 $url .= self::url_params() . $sms->url_params() . "&type={$type}";
                 $url .= ($test) ? '&from=NEWS' : '&from=' . self::from;
-                gg($url);
                 $client = new GC();
                 $response = $client->request('GET', $url);
-                echo $response->getBody();
                 $data = self::JsonInAr($response->getBody());
 
                 if($data[1])
