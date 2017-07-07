@@ -1,8 +1,14 @@
 # SMS-Aero
 
+Uses:
+
+``GuzzleHttp/6.2.1`` - http://docs.guzzlephp.org/en/stable/overview.html#installation
+``curl/7.51.0`` 
+``PHP/5.6.29``
+
 Change:
 
-``SMS\Client.php``:
+in ``SMS\Client.php``:
 
 ```php
     # login data
@@ -10,7 +16,7 @@ Change:
     const PASSWORD = 'oh***';  // Your password in SMS Aero
 ```
 
-``SMS\SMS.php``:
+in ``SMS\SMS.php``:
 
 ```php
     const TEST_NUMBER = '79000000000';  // Insert number for tests
