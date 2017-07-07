@@ -15,7 +15,7 @@ class Client
     private $password;
 
     # subscription in sms
-    const from = 'LEXAND';
+    const from = 'NEWS';  // Change subscription
 
     # chanel types
     const TYPE_4 = 4;
