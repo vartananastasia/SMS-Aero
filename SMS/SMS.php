@@ -14,7 +14,7 @@ class SMS
     public function __construct($body = 'test', $number = self::TEST_NUMBER)
     {
         $this->body = $body;
-        $this->number = $number;
+        $this->number = preg_replace("/[^0-9]/", '', $number);;
     }
 
 
