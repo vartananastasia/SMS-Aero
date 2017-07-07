@@ -5,6 +5,12 @@ namespace SMS;
 
 use Throwable;
 
+
+/**
+ * for exeptions from API after response
+ * Class SMS_API_Exeption
+ * @package SMS
+ */
 class SMS_API_Exeption extends \Exception
 {
 

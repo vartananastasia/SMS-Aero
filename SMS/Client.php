@@ -5,6 +5,10 @@ namespace SMS;
 use GuzzleHttp\Client as GC;
 
 
+/**
+ * Class Client
+ * @package SMS
+ */
 class Client
 {
     private $login;
@@ -30,6 +34,9 @@ class Client
     const PASSWORD = 'oh***';  // Your password in SMS Aero
 
 
+    /**
+     * Client constructor.
+     */
     public function __construct()
     {
         $this->login = self::LOGIN;
@@ -37,18 +44,35 @@ class Client
     }
 
 
+    /**
+     * sets password in md5
+     */
     private function SetPassword()
     {
         $this->password = md5(self::PASSWORD);
     }
 
 
+    /**
+     * sets params in url str
+     * @return string
+     */
     private function url_params()
     {
         return "?user={$this->login}&password={$this->password}&answer=json";
     }
 
 
+    /**
+     * to send one sms
+     * for test sending use $test=True
+     * if no type uses default cheapest channel
+     * @param SMS $sms
+     * @param int $type
+     * @param bool $test
+     * @throws SMS_API_Exeption
+     * @throws SMS_Exeption
+     */
     public function send_sms(SMS $sms, $type = self::TYPE_5, $test = False)
     {
         $url = self::api_base_url;
@@ -89,6 +113,7 @@ class Client
 
 
     /**
+     * terns json in arr
      * @param $json
      * @return mixed
      */

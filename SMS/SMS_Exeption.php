@@ -5,6 +5,12 @@ namespace SMS;
 
 use Throwable;
 
+
+/**
+ * for exeptions while constructing request
+ * Class SMS_Exeption
+ * @package SMS
+ */
 class SMS_Exeption extends \Exception
 {
     const INCORRECT_TYPE = 1;
