@@ -29,27 +29,23 @@ class Client
     const send_to_group = 'sendtogroup/';
     const test_send = 'testsend/';
 
-    # login data
-    const LOGIN = 'email@em***';  // Your login in SMS Aero
-    const PASSWORD = 'oh***';  // Your password in SMS Aero
-
 
     /**
      * Client constructor.
      */
-    public function __construct()
+    public function __construct($login, $password)
     {
-        $this->login = self::LOGIN;
-        self::SetPassword();
+        $this->login = $login;
+        self::SetPassword($password);
     }
 
 
     /**
      * sets password in md5
      */
-    private function SetPassword()
+    private function SetPassword($password)
     {
-        $this->password = md5(self::PASSWORD);
+        $this->password = md5($password);
     }
 
 

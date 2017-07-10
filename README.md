@@ -8,14 +8,6 @@ Uses:
 
 Change:
 
-in ``SMS\Client.php``:
-
-```php
-    # login data
-    const LOGIN = 'email@em***';  // Your login in SMS Aero
-    const PASSWORD = 'oh***';  // Your password in SMS Aero
-```
-
 in ``SMS\SMS.php``:
 
 ```php
@@ -25,7 +17,7 @@ in ``SMS\SMS.php``:
 Use real:
 
 ```php
-$send = new \SMS\Client();
+$send = new \SMS\Client('email@em***', 'oh3$er5**');
 $sms = new SMS\SMS('text', '89***');
 $send->send_sms($sms);
 ```
@@ -33,7 +25,7 @@ $send->send_sms($sms);
 Use test:
 
 ```php
-$send = new \SMS\Client();
+$send = new \SMS\Client('email@em***', 'oh3$er5**');
 $sms = new SMS\SMS();
 $send->send_sms($sms, \SMS\Client::TYPE_5, True);
 ```
