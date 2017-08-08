@@ -7,11 +7,11 @@ use Throwable;
 
 
 /**
- * for exeptions while constructing request
- * Class SMS_Exeption
+ * for exceptions while constructing request
+ * Class SMS_Exception
  * @package SMS
  */
-class SMS_Exeption extends \Exception
+class SMS_Exception extends \Exception
 {
     const INCORRECT_TYPE = 1;
     const API_JSON_ERROR = 2;
@@ -26,7 +26,7 @@ class SMS_Exeption extends \Exception
                 $message = "API returned incorrect JSON";
                 break;
             default:
-                $message = "Unknown SMS_Exeption";
+                $message = "Unknown SMS_Exception";
                 break;
         }
         parent::__construct($message, $code, $previous);

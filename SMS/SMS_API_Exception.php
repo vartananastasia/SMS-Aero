@@ -7,11 +7,11 @@ use Throwable;
 
 
 /**
- * for exeptions from API after response
- * Class SMS_API_Exeption
+ * for exceptions from API after response
+ * Class SMS_API_Exception
  * @package SMS
  */
-class SMS_API_Exeption extends \Exception
+class SMS_API_Exception extends \Exception
 {
 
     public function __construct($message, $code = 0, Throwable $previous = null)

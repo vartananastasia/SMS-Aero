@@ -67,8 +67,8 @@ class Client
      * @param SMS $sms
      * @param int $type
      * @param bool $test
-     * @throws SMS_API_Exeption
-     * @throws SMS_Exeption
+     * @throws SMS_API_Exception
+     * @throws SMS_Exception
      */
     public function send_sms(SMS $sms, $type = self::TYPE_5, $test = False)
     {
@@ -80,6 +80,7 @@ class Client
             case self::TYPE_5:
             case self::TYPE_6:
             case self::TYPE_7:
+            case self::TYPE_8:
                 $url .= self::url_params() . $sms->url_params() . "&type={$type}";
                 $url .= ($test) ? '&from=NEWS' : '&from=' . self::from;
                 $client = new GC();
@@ -94,15 +95,15 @@ class Client
                         case 'accepted':
                             break;
                         default:
-                            throw new SMS_API_Exeption($data[0]->reason);
+                            throw new SMS_API_Exception($data[0]->reason);
                             break;
                     }
                 }
                 else
-                    throw new SMS_Exeption(SMS_Exeption::API_JSON_ERROR);
+                    throw new SMS_Exception(SMS_Exception::API_JSON_ERROR);
                 break;
             default:
-                throw new SMS_Exeption(SMS_Exeption::INCORRECT_TYPE);
+                throw new SMS_Exception(SMS_Exception::INCORRECT_TYPE);
                 break;
         }
     }
