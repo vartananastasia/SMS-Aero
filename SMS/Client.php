@@ -22,6 +22,7 @@ class Client
     const TYPE_5 = 5;
     const TYPE_6 = 6;
     const TYPE_7 = 7;
+    const TYPE_8 = 8;
 
     # API settings
     const api_base_url = 'https://gate.smsaero.ru/';
